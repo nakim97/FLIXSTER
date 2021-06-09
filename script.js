@@ -9,9 +9,11 @@ const displayMovies = document.getElementById("search-movies");
 
 const nowPlaying = document.getElementById('now-playing');
 const nowPlayingDiv = document.getElementById("now-playing");
+const re = document.getElementById("now-show-more");
 
 var page = 1;
-const loadmoreBtn = document.getElementById("now-load-more");
+const nowloadmoreBtn = document.getElementById("now-load-more");
+const searchloadmoreBtn = document.getElementById("search-load-more");
 
 
 // function to implement search bar
@@ -21,6 +23,8 @@ document.getElementById('search').addEventListener('keyup', function(event){
         event.preventDefault();
         console.log(searchQuery);
         nowPlayingDiv.style.display ="none";
+        re.style.display = "none";
+        nowloadmoreBtn.style.display ="none";
         searchMovies();
     }
   })
@@ -60,10 +64,9 @@ async function nowPlayingMovies(){
             <h3>${result.title}</h3>
             <h3>⭐${result.vote_average}</h3>
         </div>
-           
         `);
         nowloadDiv.innerHTML += nowloadContainer;
-        document.getElementById("show-more").append(nowloadDiv);
+        document.getElementById("now-show-more").append(nowloadDiv);
         
         }
     loadNowPlaying();
@@ -88,6 +91,33 @@ async function searchMovies(){
     displayMovies.innerHTML = searchContainer;
 
 }
+
+// function to implement and display more movies 
+document.getElementById("search-load-more").addEventListener("click", function(e){
+    async function loadmoreSearch(){
+        page++;
+        const searchQuery = document.getElementById("search").value;
+        const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchQuery}&page=${page}`);
+        const jsonResponse = await response.json();
+        console.log(jsonResponse);
+        let searchloadContainer = "";
+        searchDiv = document.createElement("div");
+        searchDiv.setAttribute("id", "searchContainer");
+        jsonResponse.results.map((result) =>
+        searchloadContainer += `
+        <div id="search-load-container">
+            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}">
+            <h3>${result.title}</h3>
+            <h3>⭐${result.vote_average}</h3>
+        </div>
+        `);
+        searchDiv.innerHTML += searchloadContainer;
+        document.getElementById("search-show-more").append(searchDiv);
+        
+        }
+    loadmoreSearch();
+})
+
 
 // Display Now Playing Movies function
 nowPlayingMovies();
