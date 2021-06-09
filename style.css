@@ -1,0 +1,39 @@
+* {
+    background-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styling the title and search bar */
+  header h1 {
+    text-align: center;
+    letter-spacing: 20px;
+    font-family: "Limelight", cursive;
+    font-size: 60px;
+  }
+  
+  .search-bar {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #search {
+    width: 40%;
+  }
+  
+  /* Styling the Now Playing Movies */
+  #now-playing,
+  #search-movies {
+    display: grid;
+    grid-template: auto / repeat(auto-fit, minmax(400px, 1fr));
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  #movie-container {
+    margin-bottom: 50px;
+  }
+  
