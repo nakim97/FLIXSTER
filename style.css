@@ -55,4 +55,6 @@
   margin-bottom: 50px;
 }
 
-  
+#search-load-more{
+  display:none;
+}  

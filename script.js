@@ -9,7 +9,7 @@ const displayMovies = document.getElementById("search-movies");
 
 const nowPlaying = document.getElementById('now-playing');
 const nowPlayingDiv = document.getElementById("now-playing");
-const re = document.getElementById("now-show-more");
+const nowPlayingLoadDiv = document.getElementById("now-show-more");
 
 var page = 1;
 const nowloadmoreBtn = document.getElementById("now-load-more");
@@ -23,8 +23,9 @@ document.getElementById('search').addEventListener('keyup', function(event){
         event.preventDefault();
         console.log(searchQuery);
         nowPlayingDiv.style.display ="none";
-        re.style.display = "none";
+        nowPlayingLoadDiv.style.display = "none";
         nowloadmoreBtn.style.display ="none";
+        searchloadmoreBtn.style.display = "block";
         searchMovies();
     }
   })
