@@ -9,9 +9,9 @@
   /* Styling the title and search bar */
   header h1 {
     text-align: center;
-    letter-spacing: 20px;
     font-family: "Limelight", cursive;
-    font-size: 60px;
+    font-size: 70px;
+    padding-top:50px;
   }
   
   .search-bar {
@@ -21,11 +21,13 @@
   
   #search {
     width: 40%;
+    padding:10px;
   }
   
   /* Styling the Now Playing Movies */
   #now-playing,
-  #search-movies {
+  #search-movies,
+  #nowplayingContainer{
     display: grid;
     grid-template: auto / repeat(auto-fit, minmax(400px, 1fr));
     text-align: center;
@@ -36,4 +38,18 @@
   #movie-container {
     margin-bottom: 50px;
   }
+
+#now-load-more{
+  justify-content: center;
+  padding: 5px;
+  font-size: 20px;
+}
+#now-load-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
   

@@ -10,6 +10,10 @@ const displayMovies = document.getElementById("search-movies");
 const nowPlaying = document.getElementById('now-playing');
 const nowPlayingDiv = document.getElementById("now-playing");
 
+var page = 1;
+const loadmoreBtn = document.getElementById("now-load-more");
+
+
 // function to implement search bar
 document.getElementById('search').addEventListener('keyup', function(event){
     if(event.keyCode ===13){
@@ -21,11 +25,9 @@ document.getElementById('search').addEventListener('keyup', function(event){
     }
   })
 
-
-
 // function to display Now Playing movies on homepage
 async function nowPlayingMovies(){
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
     console.log(jsonResponse);
     let movieContainer = "";
@@ -41,6 +43,31 @@ async function nowPlayingMovies(){
     nowPlaying.innerHTML = movieContainer;
 }
 
+// function to implement and display more movies 
+  document.getElementById("now-load-more").addEventListener("click", function(e){
+    async function loadNowPlaying(){
+        page++;
+        const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&page=${page}`);
+        const jsonResponse = await response.json();
+        console.log(jsonResponse);
+        let nowloadContainer = "";
+        nowloadDiv = document.createElement("div");
+        nowloadDiv.setAttribute("id", "nowplayingContainer");
+        jsonResponse.results.map((result) =>
+        nowloadContainer += `
+        <div id="load-container">
+            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}">
+            <h3>${result.title}</h3>
+            <h3>⭐${result.vote_average}</h3>
+        </div>
+           
+        `);
+        nowloadDiv.innerHTML += nowloadContainer;
+        document.getElementById("show-more").append(nowloadDiv);
+        
+        }
+    loadNowPlaying();
+})
 
 
 // function to display searched Movies 
@@ -51,7 +78,7 @@ async function searchMovies(){
     let searchContainer = "";
     jsonResponse.results.map((result) =>
     searchContainer += `
-    <div id= "movie-container">
+    <div id="movie-container">
         <img src="https://image.tmdb.org/t/p/w342${result.poster_path}">
         <h3>${result.title}</h3>
         <h3>⭐${result.vote_average}</h3>
