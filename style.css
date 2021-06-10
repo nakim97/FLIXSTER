@@ -22,6 +22,9 @@
   #search {
     width: 40%;
     padding:10px;
+    font-size:20px;
+    font-family: 'Mate', serif;
+    border: 1px solid white;
   }
   
   /* Styling the Now Playing Movies */
