@@ -28,20 +28,22 @@ document.getElementById('search').addEventListener('keyup', function(event){
         const searchQuery = document.getElementById("search").value;
         event.preventDefault();
         console.log(searchQuery);
+        // hide display of now playing movies and load button
         nowPlaying.style.display ="none";
         nowPlayingLoadDiv.style.display = "none";
         nowloadmoreBtn.style.display ="none";
         searchloadmoreBtn.style.display = "block";
+        // display clear button option
         clearButton.style.display = "block";
+        // call search movies functions
         searchMovies();
+        // clear previous searched movies 
         searchedMovies.innerHTML = '';
         searchLoad.innerHTML = '';
-
+        // display searched movies results
         searchedMovies.style.display = "block";
         searchloadmoreBtn.style.display = "block";
         searchLoad.style.display = "block";
-
-        
     }
   })
 
@@ -127,7 +129,6 @@ document.getElementById("search-load-more").addEventListener("click", function(e
         let searchloadContainer = "";
         searchDiv = document.createElement("div");
         searchDiv.setAttribute("id", "searchContainer");
-
         jsonResponse.results.map((result) =>
         searchloadContainer += `
         <div id="search-load-container">
