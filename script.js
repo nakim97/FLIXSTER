@@ -40,7 +40,7 @@ document.getElementById('search').addEventListener('keyup', function(event){
         searchedMovies.style.display = "block";
         searchloadmoreBtn.style.display = "block";
         searchLoad.style.display = "block";
-        
+
         
     }
   })
@@ -156,6 +156,8 @@ document.getElementById("clearBtn").addEventListener("click", function(){
     nowPlayingLoadDiv.style.display = "block";
     nowloadmoreBtn.style.display ="block";
     clearButton.style.display ="none";
+    
+    // clear data in searched movies container
     searchedMovies.innerHTML = '';
     searchLoad.innerHTML = '';
     
