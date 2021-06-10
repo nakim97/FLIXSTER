@@ -26,10 +26,12 @@
     font-size:20px;
     font-family: 'Mate', serif;
     border: 1px solid white;
+    display: inline-block;
   }
   
   /* Styling the Now Playing Movies */
   #now-playing,
+  #currentplayingMovies,
   #search-movies,
   #nowplayingContainer,
   #searchContainer{
@@ -62,3 +64,8 @@
 #search-load-more{
   display:none;
 }  
+
+/* Styling the clear button */
+#clearBtn{
+  display:none;
+}

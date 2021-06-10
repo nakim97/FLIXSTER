@@ -1,20 +1,25 @@
+// global constants for API and urls
 const api_url = 'https://api.themoviedb.org/3'
 const api_key = '831004296f374b1a0723bb4e809b453a'
 const image_url = 'https://image.tmdb.org/t/p'
 const search_url = 'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query='
 
+// query selectors + getElements for search movies functions
 const searchQuery = document.getElementById("search").value;
 const searchKey = document.getElementById("search");
-const displayMovies = document.getElementById("search-movies");
-
+const searchedMovies = document.getElementById("search-movies");
+// query selectors + getElements for clear button
+const clearButton = document.getElementById("clearBtn");
+// query selectors + getElements for now playing movies functions
 const nowPlaying = document.getElementById('now-playing');
-const nowPlayingDiv = document.getElementById("now-playing");
 const nowPlayingLoadDiv = document.getElementById("now-show-more");
 
-var page = 1;
+// query selectors + getElements for loading more buttons
 const nowloadmoreBtn = document.getElementById("now-load-more");
 const searchloadmoreBtn = document.getElementById("search-load-more");
 
+// variable for page number
+var page = 1;
 
 // function to implement search bar
 document.getElementById('search').addEventListener('keyup', function(event){
@@ -22,10 +27,11 @@ document.getElementById('search').addEventListener('keyup', function(event){
         const searchQuery = document.getElementById("search").value;
         event.preventDefault();
         console.log(searchQuery);
-        nowPlayingDiv.style.display ="none";
+        nowPlaying.style.display ="none";
         nowPlayingLoadDiv.style.display = "none";
         nowloadmoreBtn.style.display ="none";
         searchloadmoreBtn.style.display = "block";
+        clearButton.style.display = "block";
         searchMovies();
     }
   })
@@ -36,6 +42,8 @@ async function nowPlayingMovies(){
     const jsonResponse = await response.json();
     console.log(jsonResponse);
     let movieContainer = "";
+    nowplayingDiv = document.createElement("div");
+    nowplayingDiv.setAttribute("id", "currentplayingMovies");
     jsonResponse.results.map((result) =>
     movieContainer += `
     <div id= "movie-container">
@@ -44,8 +52,9 @@ async function nowPlayingMovies(){
         <h3>⭐${result.vote_average}</h3>
     </div>
     `
-    )
-    nowPlaying.innerHTML = movieContainer;
+    );
+    nowplayingDiv.innerHTML += movieContainer;
+    document.getElementById("now-playing").append(nowplayingDiv);
 }
 
 // function to implement and display more movies 
@@ -58,6 +67,7 @@ async function nowPlayingMovies(){
         let nowloadContainer = "";
         nowloadDiv = document.createElement("div");
         nowloadDiv.setAttribute("id", "nowplayingContainer");
+
         jsonResponse.results.map((result) =>
         nowloadContainer += `
         <div id="load-container">
@@ -68,7 +78,6 @@ async function nowPlayingMovies(){
         `);
         nowloadDiv.innerHTML += nowloadContainer;
         document.getElementById("now-show-more").append(nowloadDiv);
-        
         }
     loadNowPlaying();
 })
@@ -89,7 +98,7 @@ async function searchMovies(){
     </div>
     `
     )
-    displayMovies.innerHTML = searchContainer;
+    searchedMovies.innerHTML = searchContainer;
 
 }
 
@@ -120,5 +129,19 @@ document.getElementById("search-load-more").addEventListener("click", function(e
 })
 
 
+document.getElementById("clearBtn").addEventListener("click", function(){
+    // hide display of searched movies, search more movies button, and loaded searched movies
+    searchedMovies.style.display = "none";
+    searchloadmoreBtn.style.display = "none";
+    // upon clicking, clear input value field
+    document.getElementById("search").value = "";
+    // display now playing movies, load more current movies button, and more current movies
+    nowPlaying.style.display ="block";
+    nowPlayingLoadDiv.style.display = "block";
+    nowloadmoreBtn.style.display ="block";
+    clearButton.style.display ="none";
+    
+    
+})
 // Display Now Playing Movies function
 nowPlayingMovies();
