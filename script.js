@@ -8,6 +8,7 @@ const search_url = 'https://api.themoviedb.org/3/search/movie?api_key={api_key}&
 const searchQuery = document.getElementById("search").value;
 const searchKey = document.getElementById("search");
 const searchedMovies = document.getElementById("search-movies");
+const searchLoad = document.getElementById("search-show-more");
 // query selectors + getElements for clear button
 const clearButton = document.getElementById("clearBtn");
 // query selectors + getElements for now playing movies functions
@@ -33,6 +34,12 @@ document.getElementById('search').addEventListener('keyup', function(event){
         searchloadmoreBtn.style.display = "block";
         clearButton.style.display = "block";
         searchMovies();
+        searchedMovies.innerHTML = '';
+        searchLoad.innerHTML = '';
+
+        searchedMovies.style.display = "block";
+        searchloadmoreBtn.style.display = "block";
+        
     }
   })
 
@@ -89,6 +96,10 @@ async function searchMovies(){
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchQuery}`);
     const jsonResponse = await response.json();
     let searchContainer = "";
+
+    searchedMoviesDiv = document.createElement("div");
+    searchedMoviesDiv.setAttribute("id", "searchedMoviesContainer");
+
     jsonResponse.results.map((result) =>
     searchContainer += `
     <div id="movie-container">
@@ -98,7 +109,8 @@ async function searchMovies(){
     </div>
     `
     )
-    searchedMovies.innerHTML = searchContainer;
+    searchedMoviesDiv.innerHTML += searchContainer;
+    document.getElementById("search-movies").append(searchedMoviesDiv);
 
 }
 
@@ -113,6 +125,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
         let searchloadContainer = "";
         searchDiv = document.createElement("div");
         searchDiv.setAttribute("id", "searchContainer");
+
         jsonResponse.results.map((result) =>
         searchloadContainer += `
         <div id="search-load-container">
@@ -132,6 +145,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
 document.getElementById("clearBtn").addEventListener("click", function(){
     // hide display of searched movies, search more movies button, and loaded searched movies
     searchedMovies.style.display = "none";
+    searchLoad.style.display = "none";
     searchloadmoreBtn.style.display = "none";
     // upon clicking, clear input value field
     document.getElementById("search").value = "";
@@ -140,6 +154,8 @@ document.getElementById("clearBtn").addEventListener("click", function(){
     nowPlayingLoadDiv.style.display = "block";
     nowloadmoreBtn.style.display ="block";
     clearButton.style.display ="none";
+    searchedMovies.innerHTML = '';
+    searchLoad.innerHTML = '';
     
     
 })

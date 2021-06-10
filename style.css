@@ -34,6 +34,7 @@
   #currentplayingMovies,
   #search-movies,
   #nowplayingContainer,
+  #searchedMoviesContainer,
   #searchContainer{
     display: grid;
     grid-template: auto / repeat(auto-fit, minmax(400px, 1fr));
@@ -67,5 +68,6 @@
 
 /* Styling the clear button */
 #clearBtn{
-  display:none;
+  display: none;
+  
 }
