@@ -39,6 +39,8 @@ document.getElementById('search').addEventListener('keyup', function(event){
 
         searchedMovies.style.display = "block";
         searchloadmoreBtn.style.display = "block";
+        searchLoad.style.display = "block";
+        
         
     }
   })
