@@ -11,7 +11,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 #### REQUIRED FEATURES
 
 - [x] User can view a list of current movies from The Movie Database API as a grid view.
-- [ ] For each movie displayed, user can see the following details: `Title`, `Poster Image`, `Votes`.
+- [x] For each movie displayed, user can see the following details: `Title`, `Poster Image`, `Votes`.
 - [x] User can load more current movies by clicking a button at the bottom of the list. The page should not refresh; movies should simply be added to the bottom.
 - [ ] Allow users to search for movies and display them in a grid view. Users should be able to clear results and view previous current movies displayed.
 - [x] Website accounts for basic HTML/CSS accessibility features.
