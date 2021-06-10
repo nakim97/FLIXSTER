@@ -1,81 +1,89 @@
 /* General Styling */
 * {
-    background-color: black;
-    color: white;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Styling the title and search bar */
-  header h1 {
-    text-align: center;
-    font-family: "Limelight", cursive;
-    font-size: 70px;
-    padding-top:50px;
-    letter-spacing:5px;
-  }
-  
-  .search-bar {
-    text-align: center;
-    margin-top: 50px;
-    display:flex;
-    justify-content: center;
-  }
-  
-  #search {
-    width: 40%;
-    padding:10px;
-    font-size:20px;
-    font-family: 'Mate', serif;
-    border: 1px solid white;
-    color:white;
-  
-  }
- 
-  /* Styling the clear button */
-  #clearBtn{
-    display: none;
-    outline:none;
-    border:none;
-    margin-left: 50px;
-    cursor:pointer;
-    color:white;
-  }
-   
-  i {
-    font-family:FontAwesome;
-     color:white;
-     font-size: 30px;    
-    }
+  background-color: black;
+  color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  
-  /* Styling the Now Playing Movies */
-  #now-playing,
-  #currentplayingMovies,
-  #search-movies,
-  #nowplayingContainer,
-  #searchedMoviesContainer,
-  #searchContainer{
-    display: grid;
-    grid-template: auto / repeat(auto-fit, minmax(400px, 1fr));
-    text-align: center;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  #movie-container {
-    margin-bottom: 50px;
-  }
+/* Styling the title and search bar */
+header h1 {
+  text-align: center;
+  font-family: "Limelight", cursive;
+  font-size: 70px;
+  padding-top: 50px;
+  letter-spacing: 5px;
+}
+
+.search-bar {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#search {
+  width: 40%;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Mate", serif;
+  border: 1px solid white;
+  color: white;
+}
+
+/* Styling the clear button */
+#clearBtn {
+  display: none;
+  outline: none;
+  border: none;
+  margin-left: 50px;
+  cursor: pointer;
+  color: white;
+}
+
+i {
+  font-family: FontAwesome;
+  color: white;
+  font-size: 30px;
+}
+
+/* Styling the Now Playing Movies */
+#now-playing,
+#currentplayingMovies,
+#search-movies,
+#nowplayingContainer,
+#searchedMoviesContainer,
+#searchContainer {
+  display: grid;
+  grid-template: auto / repeat(auto-fit, minmax(400px, 1fr));
+  text-align: center;
+  align-items: center;
+  margin-top: 50px;
+}
+#now-playing h3,
+#currentplayingMovies h3,
+#search-movies h3,
+#nowplayingContainer h3,
+#searchedMoviesContainer h3,
+#searchContainer h3 {
+  font-family: "Special Elite", cursive;
+}
+
+#movie-container {
+  margin-bottom: 50px;
+}
 
 /* Styling load more buttons and respective containers for more Now Playing & Searched movies */
 
-#now-load-more, #search-load-more{
+#now-load-more,
+#search-load-more {
   justify-content: center;
   padding: 5px;
   font-size: 20px;
 }
-#now-load-div ,#search-load-div{
+#now-load-div,
+#search-load-div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +91,20 @@
   margin-bottom: 50px;
 }
 
-#search-load-more{
-  display:none;
-}  
+#search-load-more {
+  display: none;
+}
 
+/* Responsiveness and adding media queries*/
+@media (max-width: 660px) {
+  header h1 {
+    font-size: 60px;
+    letter-spacing: 0px;
+  }
+  #search {
+    width: 50%;
+  }
+  #clearBtn {
+    margin-left: 20px;
+  }
+}

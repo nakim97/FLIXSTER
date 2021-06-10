@@ -58,7 +58,7 @@ async function nowPlayingMovies(){
     jsonResponse.results.map((result) =>
     movieContainer += `
     <div id= "movie-container">
-        <img src="https://image.tmdb.org/t/p/w342${result.poster_path}">
+        <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"/>
         <h3>${result.title}</h3>
         <h3>⭐${result.vote_average}</h3>
     </div>
@@ -82,7 +82,7 @@ async function nowPlayingMovies(){
         jsonResponse.results.map((result) =>
         nowloadContainer += `
         <div id="load-container">
-            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}">
+            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"/>
             <h3>${result.title}</h3>
             <h3>⭐${result.vote_average}</h3>
         </div>
@@ -107,7 +107,7 @@ async function searchMovies(){
     jsonResponse.results.map((result) =>
     searchContainer += `
     <div id="movie-container">
-        <img src="https://image.tmdb.org/t/p/w342${result.poster_path}">
+        <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"/>
         <h3>${result.title}</h3>
         <h3>⭐${result.vote_average}</h3>
     </div>
@@ -132,7 +132,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
         jsonResponse.results.map((result) =>
         searchloadContainer += `
         <div id="search-load-container">
-            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}">
+            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"/>
             <h3>${result.title}</h3>
             <h3>⭐${result.vote_average}</h3>
         </div>
