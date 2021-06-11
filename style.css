@@ -123,3 +123,32 @@ i {
     margin-left: 10px;
   }
 }
+
+/* styling the pop up */
+#modal{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: black;
+  color:white;
+  width: 400px;
+  height: 400px;
+  
+  
+}
+
+#close-btn{
+    position:absolute;
+     top:0;
+     right:0;
+     outline:none;
+     border:none;
+     cursor:pointer;
+}
+#pop-img{
+  justify-content: center;
+}
