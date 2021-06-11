@@ -82,10 +82,10 @@ async function nowPlayingMovies(){
             nowPopContainer.innerHTML =`
                 <div id="modal">
                     <div id="modal-content">
-                    <button id="close-btn"> X </button>
-                    <img src="https://image.tmdb.org/t/p/w342${nowPlayingBackDrop}" id="pop-img" alt="${nowPlayingTitle}"/>
-                    <h1>${nowPlayingTitle}</h1>
-                    <span>${nowPlayingDate}</span>
+                        <button id="close-btn"> X </button>
+                        <img src="https://image.tmdb.org/t/p/w342${nowPlayingBackDrop}" id="pop-img" alt="${nowPlayingTitle}"/>
+                        <h1>${nowPlayingTitle}</h1>
+                        <span>${nowPlayingDate}</span>
                         <span>⭐${nowPlayingRating}</span>
                         <p>${nowPlayingOverview}</p>
                     </div>
@@ -94,10 +94,16 @@ async function nowPlayingMovies(){
             `
             
             document.body.append(nowPopContainer);
-            const testy = document.getElementById("modal");
-            document.getElementById("close-btn").addEventListener('click', function(){
-                testy.style.visibility ="hidden";
-            })
+            
+            let closeBtnLoop = document.querySelectorAll("#close-btn");
+            let closeModal = document.querySelectorAll("#modal");
+            for(var i =0; closeBtnLoop.length; i++){
+                closeBtnLoop[i].addEventListener("click", function(){
+                    for(var i=0; closeModal.length; i++){
+                        closeModal[i].style.display = "none";
+                    }
+                })
+            }
             
             
         })
@@ -124,7 +130,7 @@ async function nowPlayingMovies(){
         <div id="load-container">
             <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}" id="img" overview="${result.overview}" release-date ="${result.release_date}" 
             title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
-            <h3>${result.title}</h3>
+            <h3 id="nowLoad">${result.title}</h3>
             <h3>⭐${result.vote_average}</h3>
         </div>
         `);
@@ -156,9 +162,15 @@ async function nowPlayingMovies(){
                     </div>
                 `
                 document.body.append(nowPopLoadContainer);
-                document.getElementById("close-btn").addEventListener('click', function(){
-                    document.getElementById("modal").style.visibility = "hidden";
+                let closeBtnLoop = document.querySelectorAll("#close-btn");
+                let closeModal = document.querySelectorAll("#modal");
+                for(var i =0; closeBtnLoop.length; i++){
+                    closeBtnLoop[i].addEventListener("click", function(){
+                        for(var i=0; closeModal.length; i++){
+                            closeModal[i].style.display = "none";
+                    }
                 })
+            }
                 
                 
             })
@@ -184,7 +196,7 @@ async function searchMovies(){
     <div id="movie-container">
         <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"  id="img" overview="${result.overview}" release-date ="${result.release_date}" 
         title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
-        <h3>${result.title}</h3>
+        <h3 id="search-title">${result.title}</h3>
         <h3>⭐${result.vote_average}</h3>
     </div>
     `
@@ -217,9 +229,15 @@ async function searchMovies(){
                     </div>
                 `
                 document.body.append(searchPopContainer);
-                document.getElementById("close-btn").addEventListener('click', function(){
-                    document.getElementById("modal").style.visibility = "hidden";
+                let closeBtnLoop = document.querySelectorAll("#close-btn");
+                let closeModal = document.querySelectorAll("#modal");
+                for(var i =0; closeBtnLoop.length; i++){
+                        closeBtnLoop[i].addEventListener("click", function(){
+                            for(var i=0; closeModal.length; i++){
+                            closeModal[i].style.display = "none";
+                    }
                 })
+            }
                 
                 
             })
@@ -244,7 +262,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
         <div id="search-load-container">
             <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"  id="img" overview="${result.overview}" release-date ="${result.release_date}" 
             title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
-            <h3>${result.title}</h3>
+            <h3 id="searchLoad">${result.title}</h3>
             <h3>⭐${result.vote_average}</h3>
         </div>
         `,
@@ -278,9 +296,15 @@ document.getElementById("search-load-more").addEventListener("click", function(e
                     </div>
                 `
                 document.body.append(searchLoadPopContainer);
-                document.getElementById("close-btn").addEventListener('click', function(){
-                    document.getElementById("modal").style.visibility = "hidden";
+                let closeBtnLoop = document.querySelectorAll("#close-btn");
+                let closeModal = document.querySelectorAll("#modal");
+                for(var i =0; closeBtnLoop.length; i++){
+                    closeBtnLoop[i].addEventListener("click", function(){
+                        for(var i=0; closeModal.length; i++){
+                        closeModal[i].style.display = "none";
+                    }
                 })
+            }
                 
                 
             })

@@ -5,7 +5,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background-color: black;
 }
 
@@ -23,6 +23,7 @@ header h1 {
   margin-top: 50px;
   display: flex;
   justify-content: center;
+  color: black;
 }
 
 #search {
@@ -31,7 +32,7 @@ header h1 {
   font-size: 20px;
   font-family: "Mate", serif;
   border: 1px solid white;
-  color: white;
+  color: black;
 }
 
 /* Styling the clear button */
@@ -42,12 +43,14 @@ header h1 {
   margin-left: 50px;
   cursor: pointer;
   color: white;
+  background-color: black;
 }
 
 i {
   font-family: FontAwesome;
   color: white;
   font-size: 30px;
+  background-color: black;
 }
 
 /* Styling the Now Playing Movies */
@@ -83,6 +86,8 @@ i {
   justify-content: center;
   padding: 5px;
   font-size: 20px;
+  background-color: black;
+  font-family: "Special Elite", cursive;
 }
 #now-load-div,
 #search-load-div {
@@ -97,9 +102,65 @@ i {
   display: none;
 }
 
-#container-title {
+#container-title,
+#nowLoad,
+#search-title,
+#searchLoad {
   margin-top: 10px;
 }
+
+/* styling the pop up */
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1000;
+  color: white;
+}
+#modal-content {
+  background-color: black;
+  width: 400px;
+  height: 600px;
+  justify-content: center;
+}
+
+#modal-content h1 {
+  font-family: "Special Elite", cursive;
+  margin-top: 20px;
+}
+#modal-content p {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+#close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: black;
+}
+#pop-img {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style movie posters */
+#img {
+  justify-content: center;
+  margin-top: 20px;
+  transition: all 1.5s ease;
+}
+#img:hover {
+  transform: scaleY(1.02);
+}
+
 /* Responsiveness and adding media queries*/
 @media (max-width: 780px) {
   header h1 {
@@ -126,56 +187,4 @@ i {
   #clearBtn {
     margin-left: 10px;
   }
-}
-
-/* styling the pop up */
-#modal{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1000;
-  color: white;
-}
-#modal-content {
-  background-color: black;
-  width: 400px;
-  height: 500px;
-  justify-content: center;
-}
-
-#modal-content h1 {
-  font-family: "Special Elite", cursive;
-  margin-top: 20px;
-}
-#modal-content p {
-  margin-top: 20px;
-  padding-bottom: 20px;
-}
-#close-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right:5px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-  font-weight: bold;
-  background-color: black;
-}
-#pop-img {
-  justify-content: center;
-  margin-top: 20px;
-}
-
-/* Style movie posters */
-#img {
-  justify-content: center;
-  margin-top: 20px;
-  transition: all 1.5s ease;
-}
-#img:hover {
-  transform: scaleY(1.02);
 }
