@@ -20,6 +20,7 @@ const searchloadmoreBtn = document.getElementById("search-load-more");
 const now_playing_title = document.getElementById("nowTitle");
 const search_title = document.getElementById("searchTitle");
 
+const slider = document.querySelector(".movie-slide-container");
 // variable for page number
 var page = 1;
 
@@ -49,6 +50,8 @@ document.getElementById('search').addEventListener('keyup', function(event){
         // display and hide now playing and search results title
         search_title.style.display = "block";
         now_playing_title.style.display = "none";
+
+        slider.style.display = "none";
     }
   })
 
@@ -332,5 +335,6 @@ document.getElementById("clearBtn").addEventListener("click", function(){
 // Display Now Playing Movies function
 window.onload = function() {
    nowPlayingMovies();
+   testie();
 };
 
