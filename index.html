@@ -11,21 +11,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet"></head>
     <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Roboto+Mono&family=Special+Elite&display=swap" rel="stylesheet"><body>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
     <!-- Displaying Title , Search Bar, and clear button -->
     <header>
-        <h1>FLIXTER 🍿</h1>
         <div class="search-bar">
+            <h1>FLIXTER 🍿</h1>
             <input type="text" placeholder="Search for movies..." id="search">
             <button id="clearBtn"> <i class="fas fa-times"></i> </button>
         </div>
         
     </header>
+    <!-- Display sample trending movie posters -->
+    <div class="container">
+        <div class="slider-container slider">
+            <div class="slider-div">
+                <img src="images/demo1.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo2.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo3.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo4.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo5.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo6.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo7.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo8.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo9.jpg" alt="sample movie poster">
+            </div>
+
+            <div class="slider-div">
+                <img src="images/demo10.jpg" alt="sample movie poster">
+            </div>
+
+            
+        </div>
+    </div>
     
     <!-- Displaying DIV container for showcasing Now Playing Movies-->
-    <div id="now-playing"></div>
+    <div id="now-playing-container">
+        <h3 id="nowTitle">Now Playing </h3>
+        <div id="now-playing"></div>
+    </div>
+    
     <!-- Displaying DIV container for showcasing Searched Movies-->
-    <div id="search-movies"></div>
+    <div id="searchMovie-container">
+        <h3 id="searchTitle"> Search Results </h3>
+        <div id="search-movies"></div>
+    </div>
+    
 
     <!-- Displaying DIV container and button for showcasing more now playing movies on click -->
     <div id="now-show-more"></div>
@@ -39,7 +95,60 @@
         <button id="search-load-more"> Show More </button>
     </div>
     
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+        $(".slider").slick({
+            dots: true,
+            infinite: true,
+            mobileFirst: true,
+            arrows: true,
+            autoplay: true,
+            centerMode: true,
+            arrows: true,
+            responsive: [{
+                
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 1700,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots:true,
+                        
+                    }
+                },
+                
+                
+                
+
+            ]
+        });
+    </script>
     
 </body>
 </html>

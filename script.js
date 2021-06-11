@@ -17,6 +17,9 @@ const nowPlayingLoadDiv = document.getElementById("now-show-more");
 const nowloadmoreBtn = document.getElementById("now-load-more");
 const searchloadmoreBtn = document.getElementById("search-load-more");
 
+const now_playing_title = document.getElementById("nowTitle");
+const search_title = document.getElementById("searchTitle");
+
 // variable for page number
 var page = 1;
 
@@ -42,6 +45,10 @@ document.getElementById('search').addEventListener('keyup', function(event){
         searchedMovies.style.display = "block";
         searchloadmoreBtn.style.display = "block";
         searchLoad.style.display = "block";
+
+        // display and hide now playing and search results title
+        search_title.style.display = "block";
+        now_playing_title.style.display = "none";
     }
   })
 
@@ -56,14 +63,12 @@ async function nowPlayingMovies(){
     jsonResponse.results.map((result) =>
     movieContainer += `
     <div id= "movie-container">
-        <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}" id="img" overview="${result.overview}" release-date ="${result.release_date}" 
+        <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" alt="${result.title}" id="img" overview="${result.overview}" release-date ="${result.release_date}" 
         title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
         <h3 id="container-title">${result.title}</h3>
         <h3>⭐${result.vote_average}</h3>
     </div>
     `,
-   
-    
     ); 
     nowplayingDiv.innerHTML += movieContainer;
     document.getElementById("now-playing").append(nowplayingDiv);
@@ -83,7 +88,7 @@ async function nowPlayingMovies(){
                 <div id="modal">
                     <div id="modal-content">
                         <button id="close-btn"> X </button>
-                        <img src="https://image.tmdb.org/t/p/w342${nowPlayingBackDrop}" id="pop-img" alt="${nowPlayingTitle}"/>
+                        <img src="https://image.tmdb.org/t/p/w400${nowPlayingBackDrop}" id="pop-img" alt="${nowPlayingTitle}"/>
                         <h1>${nowPlayingTitle}</h1>
                         <span>${nowPlayingDate}</span>
                         <span>⭐${nowPlayingRating}</span>
@@ -92,9 +97,7 @@ async function nowPlayingMovies(){
                    
                 </div>
             `
-            
             document.body.append(nowPopContainer);
-            
             let closeBtnLoop = document.querySelectorAll("#close-btn");
             let closeModal = document.querySelectorAll("#modal");
             for(var i =0; closeBtnLoop.length; i++){
@@ -104,16 +107,11 @@ async function nowPlayingMovies(){
                     }
                 })
             }
-            
-            
         })
-        
+
         }
     }
     
-
-
-
 // function to implement and display more movies 
   document.getElementById("now-load-more").addEventListener("click", function(e){
     async function loadNowPlaying(){
@@ -128,7 +126,7 @@ async function nowPlayingMovies(){
         jsonResponse.results.map((result) =>
         nowloadContainer += `
         <div id="load-container">
-            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}" id="img" overview="${result.overview}" release-date ="${result.release_date}" 
+            <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" alt="${result.title}" id="img" overview="${result.overview}" release-date ="${result.release_date}" 
             title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
             <h3 id="nowLoad">${result.title}</h3>
             <h3>⭐${result.vote_average}</h3>
@@ -138,7 +136,6 @@ async function nowPlayingMovies(){
         document.getElementById("now-show-more").append(nowloadDiv);
 
         let nowPlayingLoadPopup = document.querySelectorAll('#nowplayingContainer');
-    
         for (var i =0; nowPlayingLoadPopup.length; i++){
             nowPlayingLoadPopup[i].addEventListener('click', function(e){
                 var nowPlayingLoadOverview = e.target.getAttribute("overview");
@@ -152,7 +149,7 @@ async function nowPlayingMovies(){
                     <div id="modal">
                         <div id="modal-content">
                         <button id="close-btn"> X </button>
-                        <img src="https://image.tmdb.org/t/p/w342${nowPlayingLoadBackDrop}" id="pop-img" alt="${nowPlayingLoadTitle}"/>
+                        <img src="https://image.tmdb.org/t/p/w400${nowPlayingLoadBackDrop}" id="pop-img" alt="${nowPlayingLoadTitle}"/>
                         <h1>${nowPlayingLoadTitle}</h1>
                         <span>${nowPlayingLoadDate}</span>
                             <span>⭐${nowPlayingLoadRating}</span>
@@ -171,15 +168,12 @@ async function nowPlayingMovies(){
                     }
                 })
             }
-                
-                
             })
             
             }
         }
     loadNowPlaying();
 })
-
 
 // function to display searched Movies 
 async function searchMovies(){
@@ -194,7 +188,7 @@ async function searchMovies(){
     jsonResponse.results.map((result) =>
     searchContainer += `
     <div id="movie-container">
-        <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"  id="img" overview="${result.overview}" release-date ="${result.release_date}" 
+        <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" alt="${result.title}"  id="img" overview="${result.overview}" release-date ="${result.release_date}" 
         title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
         <h3 id="search-title">${result.title}</h3>
         <h3>⭐${result.vote_average}</h3>
@@ -219,7 +213,7 @@ async function searchMovies(){
                     <div id="modal">
                         <div id="modal-content">
                         <button id="close-btn"> X </button>
-                        <img src="https://image.tmdb.org/t/p/w342${searchBackDrop}" id="pop-img" alt="${searchTitle}"/>
+                        <img src="https://image.tmdb.org/t/p/w400${searchBackDrop}" id="pop-img" alt="${searchTitle}"/>
                         <h1>${searchTitle}</h1>
                         <span>${searchDate}</span>
                             <span>⭐${searchRating}</span>
@@ -238,12 +232,10 @@ async function searchMovies(){
                     }
                 })
             }
-                
-                
+        
             })
             
             }
-    
 }
 
 // function to implement and display more movies 
@@ -260,19 +252,17 @@ document.getElementById("search-load-more").addEventListener("click", function(e
         jsonResponse.results.map((result) =>
         searchloadContainer += `
         <div id="search-load-container">
-            <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}"  id="img" overview="${result.overview}" release-date ="${result.release_date}" 
+            <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" alt="${result.title}"  id="img" overview="${result.overview}" release-date ="${result.release_date}" 
             title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
             <h3 id="searchLoad">${result.title}</h3>
             <h3>⭐${result.vote_average}</h3>
         </div>
         `,
         );
-    
         searchDiv.innerHTML += searchloadContainer;
         document.getElementById("search-show-more").append(searchDiv);
         
         let searchLoadPopup = document.querySelectorAll('#searchContainer');
-    
         for (var i =0; searchLoadPopup.length; i++){
             searchLoadPopup[i].addEventListener('click', function(e){
                 var searchLoadOverview = e.target.getAttribute("overview");
@@ -286,13 +276,12 @@ document.getElementById("search-load-more").addEventListener("click", function(e
                     <div id="modal">
                         <div id="modal-content">
                         <button id="close-btn"> X </button>
-                        <img src="https://image.tmdb.org/t/p/w342${searchLoadBackDrop}" id="pop-img" alt="${searchLoadTitle}"/>
+                        <img src="https://image.tmdb.org/t/p/w400${searchLoadBackDrop}" id="pop-img" alt="${searchLoadTitle}"/>
                         <h1>${searchLoadTitle}</h1>
                         <span>${searchLoadDate}</span>
                             <span>⭐${searchLoadRating}</span>
                             <p>${searchLoadOverview}</p>
                         </div>
-                       
                     </div>
                 `
                 document.body.append(searchLoadPopContainer);
@@ -306,7 +295,6 @@ document.getElementById("search-load-more").addEventListener("click", function(e
                 })
             }
                 
-                
             })
             
             }
@@ -315,7 +303,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
     loadmoreSearch();
 })
 
-
+// Click event listener function for clear button
 document.getElementById("clearBtn").addEventListener("click", function(){
     // hide display of searched movies, search more movies button, and loaded searched movies
     searchedMovies.style.display = "none";
@@ -332,13 +320,16 @@ document.getElementById("clearBtn").addEventListener("click", function(){
     // clear data in searched movies container
     searchedMovies.innerHTML = '';
     searchLoad.innerHTML = '';
+
+    // display and hide now playing and search titles
+    search_title.style.display = "none";
+    now_playing_title.style.display = "block";
     
     
 })
 
 
 // Display Now Playing Movies function
-
 window.onload = function() {
    nowPlayingMovies();
 };

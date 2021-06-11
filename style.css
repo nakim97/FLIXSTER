@@ -13,26 +13,27 @@ body {
 header h1 {
   text-align: center;
   font-family: "Limelight", cursive;
-  font-size: 70px;
-  padding-top: 50px;
+  font-size: 40px;
   letter-spacing: 5px;
+  margin-left: 50px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .search-bar {
-  text-align: center;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
   color: black;
+  margin-top: 50px;
+  clear: both;
 }
 
 #search {
-  width: 40%;
-  padding: 10px;
   font-size: 20px;
   font-family: "Mate", serif;
   border: 1px solid white;
   color: black;
+  height: 10%;
+  width: 20%;
+  display: inline-block;
 }
 
 /* Styling the clear button */
@@ -40,10 +41,12 @@ header h1 {
   display: none;
   outline: none;
   border: none;
-  margin-left: 50px;
+  padding-right: 50px;
   cursor: pointer;
   color: white;
   background-color: black;
+  float: right;
+  margin-top: 20px;
 }
 
 i {
@@ -64,7 +67,7 @@ i {
   grid-template: auto / repeat(auto-fit, minmax(400px, 1fr));
   text-align: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 #now-playing h3,
 #currentplayingMovies h3,
@@ -77,6 +80,19 @@ i {
 
 #movie-container {
   margin-bottom: 50px;
+}
+
+#nowTitle,
+#searchTitle{
+  margin-left:50px;
+  font-family: "Special Elite", cursive;
+  font-size: 30px;
+  margin-top:50px;
+  letter-spacing: 5px;
+}
+
+#searchTitle{
+  display:none;
 }
 
 /* Styling load more buttons and respective containers for more Now Playing & Searched movies */
@@ -165,26 +181,72 @@ i {
 @media (max-width: 780px) {
   header h1 {
     font-size: 60px;
-    letter-spacing: 0px;
+    letter-spacing: 5px;
+    text-align: center;
   }
   #search {
-    width: 50%;
+    width: 60%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .search-bar {
+    text-align: center;
   }
   #clearBtn {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 480px) {
   header h1 {
-    font-size: 50px;
+    font-size: 30px;
     letter-spacing: 5px;
   }
   #search {
     width: 60%;
   }
   #clearBtn {
-    margin-left: 10px;
+    margin-left: 5px;
+    font-size: 20px;
   }
 }
+
+/* Styling the SLider */
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+.slick-prev {
+  margin-left: 50px;
+  z-index: 3;
+  cursor:pointer;
+}
+
+.slick-next {
+  margin-right: 50px;
+  z-index: 3;
+  cursor:pointer;
+}
+
+
+.slider {
+  width: 100%;
+  margin: 100px auto;
+}
+
+.slick-slide {
+  margin: 10px 20px;
+}
+
+.slick-slide img {
+  width: auto;
+  height: 450px;
+  transform: scale(0.8);
+}
+
+.slick-dotted .slick-current img {
+  transform: scale(1.01);
+}
+
