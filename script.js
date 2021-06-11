@@ -319,15 +319,14 @@ document.getElementById("clearBtn").addEventListener("click", function(){
     nowPlayingLoadDiv.style.display = "block";
     nowloadmoreBtn.style.display ="block";
     clearButton.style.display ="none";
-    
+    // display slider again after hiding container
+    slider.style.display = "block";
     // clear data in searched movies container
     searchedMovies.innerHTML = '';
     searchLoad.innerHTML = '';
-
     // display and hide now playing and search titles
     search_title.style.display = "none";
     now_playing_title.style.display = "block";
-    
     
 })
 
