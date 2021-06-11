@@ -29,10 +29,12 @@ header h1 {
 #search {
   font-size: 20px;
   font-family: "Mate", serif;
-  border: 1px solid white;
-  color: black;
-  height: 10%;
+  background: #1b1b1b;
+  color: white;
+  height: 15%;
   width: 20%;
+  outline: none;
+  border: none;
   display: inline-block;
 }
 
@@ -83,16 +85,16 @@ i {
 }
 
 #nowTitle,
-#searchTitle{
-  margin-left:50px;
+#searchTitle {
+  margin-left: 50px;
   font-family: "Special Elite", cursive;
   font-size: 30px;
-  margin-top:50px;
+  margin-top: 50px;
   letter-spacing: 5px;
 }
 
-#searchTitle{
-  display:none;
+#searchTitle {
+  display: none;
 }
 
 /* Styling load more buttons and respective containers for more Now Playing & Searched movies */
@@ -128,13 +130,13 @@ i {
 /* styling the pop up */
 
 #modal {
-  position:fixed;
+  position: fixed;
   text-align: center;
   z-index: 1000;
   color: white;
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -155,6 +157,7 @@ i {
 #modal-content p {
   margin-top: 20px;
   padding-bottom: 20px;
+  font-family: "Mate", serif;
 }
 #close-btn {
   position: absolute;
@@ -227,15 +230,14 @@ i {
 .slick-prev {
   margin-left: 50px;
   z-index: 3;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .slick-next {
   margin-right: 50px;
   z-index: 3;
-  cursor:pointer;
+  cursor: pointer;
 }
-
 
 .slider {
   width: 100%;
@@ -255,4 +257,3 @@ i {
 .slick-dotted .slick-current img {
   transform: scale(1.01);
 }
-
