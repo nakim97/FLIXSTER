@@ -1,10 +1,12 @@
 /* General Styling */
 * {
-  background-color: black;
   color: white;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+body{
+  background-color: black;
 }
 
 /* Styling the title and search bar */
@@ -127,25 +129,27 @@ i {
 }
 
 /* styling the pop up */
-#modal {
+#modal{
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  border-radius: 20px;
-  z-index: 100;
-  background-color: black;
+  z-index: 1000;
   color: white;
+}
+#modal-content {
+  background-color: black;
   width: 400px;
   height: 500px;
+  justify-content: center;
 }
 
-#modal h1 {
+#modal-content h1 {
   font-family: "Special Elite", cursive;
   margin-top: 20px;
 }
-#modal p {
+#modal-content p {
   margin-top: 20px;
   padding-bottom: 20px;
 }
@@ -153,11 +157,13 @@ i {
   position: absolute;
   top: 0;
   right: 0;
+  padding-right:5px;
   outline: none;
   border: none;
   cursor: pointer;
   margin-top: 10px;
   font-weight: bold;
+  background-color: black;
 }
 #pop-img {
   justify-content: center;

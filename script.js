@@ -1,8 +1,6 @@
 // global constants for API and urls
 const api_url = 'https://api.themoviedb.org/3'
 const api_key = '831004296f374b1a0723bb4e809b453a'
-const image_url = 'https://image.tmdb.org/t/p'
-const search_url = 'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query='
 
 // query selectors + getElements for search movies functions
 const searchQuery = document.getElementById("search").value;
@@ -83,7 +81,7 @@ async function nowPlayingMovies(){
             nowPopContainer = document.createElement("div");
             nowPopContainer.innerHTML =`
                 <div id="modal">
-                    <div class="modal-content">
+                    <div id="modal-content">
                     <button id="close-btn"> X </button>
                     <img src="https://image.tmdb.org/t/p/w342${nowPlayingBackDrop}" id="pop-img" alt="${nowPlayingTitle}"/>
                     <h1>${nowPlayingTitle}</h1>
@@ -146,7 +144,7 @@ async function nowPlayingMovies(){
                 nowPopLoadContainer = document.createElement("div");
                 nowPopLoadContainer.innerHTML =`
                     <div id="modal">
-                        <div class="modal-content">
+                        <div id="modal-content">
                         <button id="close-btn"> X </button>
                         <img src="https://image.tmdb.org/t/p/w342${nowPlayingLoadBackDrop}" id="pop-img" alt="${nowPlayingLoadTitle}"/>
                         <h1>${nowPlayingLoadTitle}</h1>
@@ -207,7 +205,7 @@ async function searchMovies(){
                 searchPopContainer = document.createElement("div");
                 searchPopContainer.innerHTML =`
                     <div id="modal">
-                        <div class="modal-content">
+                        <div id="modal-content">
                         <button id="close-btn"> X </button>
                         <img src="https://image.tmdb.org/t/p/w342${searchBackDrop}" id="pop-img" alt="${searchTitle}"/>
                         <h1>${searchTitle}</h1>
@@ -268,7 +266,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
                 searchLoadPopContainer = document.createElement("div");
                 searchLoadPopContainer.innerHTML =`
                     <div id="modal">
-                        <div class="modal-content">
+                        <div id="modal-content">
                         <button id="close-btn"> X </button>
                         <img src="https://image.tmdb.org/t/p/w342${searchLoadBackDrop}" id="pop-img" alt="${searchLoadTitle}"/>
                         <h1>${searchLoadTitle}</h1>
