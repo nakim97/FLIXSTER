@@ -28,9 +28,39 @@ Deployed Application (optional): [Flixster Deployed Site](https://stellakim-flix
 
 ### Walkthough GIF
 
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
+- Showcasing the slider carousel of Now Playing & Popular Movie Posters (images)
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+![](demogif.gif)
+
+- Showcasing the grid of Now Playing Movies that features movie details such as the movie's title, poster image, and votes
+
+![](demogif1.gif)
+
+- Showcasing the load more button for Now Playing Movies
+
+![](demogif2.gif)
+
+- Showcasing the search bar and grid display of searched movies
+
+![](demogif3.gif)
+
+- Showcasing theload more button for searched movies
+
+![](demogif4.gif)
+
+- Showcasing the pop up modal box which displays more details about the movie on click
+
+![](demogif6.gif)
+
+- Showcasing hover effect animation on movie poster images
+
+![](demogif7.gif)
+
+- Showcasing responsiveness
+
+![](demogif8.gif)
+
+
 
 ### Reflection
 
