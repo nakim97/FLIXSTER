@@ -126,20 +126,26 @@ i {
 }
 
 /* styling the pop up */
+
 #modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position:fixed;
   text-align: center;
   z-index: 1000;
   color: white;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #modal-content {
   background-color: black;
   width: 400px;
-  height: 600px;
-  justify-content: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 200px;
 }
 
 #modal-content h1 {
