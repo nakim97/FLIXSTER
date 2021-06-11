@@ -4,7 +4,7 @@ Submitted by: **Stella Kim**
 
 Estimated time spent: **15** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://stellakim-flixter.netlify.app/)
 
 ### Application Features
 
