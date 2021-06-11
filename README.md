@@ -19,7 +19,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://stellakim-flix
 
 #### STRETCH FEATURES
 
-- [ ] Deploy website using GitHub Pages. 
+- [x] Deploy website using GitHub Pages. (Netlify) 
 - [x] Allow user to view more details about a movie within a popup.
 - [x] Improve the user experience through CSS & animation. 
 - [x] Implemented a slider carousel to display now playing movies (movie posters).
@@ -44,9 +44,13 @@ Deployed Application (optional): [Flixster Deployed Site](https://stellakim-flix
 
 ![](demogif3.gif)
 
-- Showcasing theload more button for searched movies
+- Showcasing the load more button for searched movies
 
 ![](demogif4.gif)
+
+- Showcasing the clear searched results & clearing search input field value
+
+![](demogif5.gif)
 
 - Showcasing the pop up modal box which displays more details about the movie on click
 
