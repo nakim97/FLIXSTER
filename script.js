@@ -60,7 +60,7 @@ async function nowPlayingMovies(){
     <div id= "movie-container">
         <img src="https://image.tmdb.org/t/p/w342${result.poster_path}" alt="${result.title}" id="img" overview="${result.overview}" release-date ="${result.release_date}" 
         title ="${result.title}" vote ="${result.vote_average}" backdrop ="${result.backdrop_path}"/>
-        <h3>${result.title}</h3>
+        <h3 id="container-title">${result.title}</h3>
         <h3>⭐${result.vote_average}</h3>
     </div>
     `,
@@ -80,7 +80,6 @@ async function nowPlayingMovies(){
             var nowPlayingRating = e.target.getAttribute("vote");
             var nowPlayingBackDrop = e.target.getAttribute("backdrop");
            
-            
             nowPopContainer = document.createElement("div");
             nowPopContainer.innerHTML =`
                 <div id="modal">
@@ -96,9 +95,10 @@ async function nowPlayingMovies(){
                 </div>
             `
             
-            document.body.appendChild(nowPopContainer);
+            document.body.append(nowPopContainer);
+            const testy = document.getElementById("modal");
             document.getElementById("close-btn").addEventListener('click', function(){
-                document.getElementById("modal").style.display;
+                testy.style.visibility ="hidden";
             })
             
             
@@ -157,7 +157,7 @@ async function nowPlayingMovies(){
                        
                     </div>
                 `
-                document.body.appendChild(nowPopLoadContainer);
+                document.body.append(nowPopLoadContainer);
                 document.getElementById("close-btn").addEventListener('click', function(){
                     document.getElementById("modal").style.visibility = "hidden";
                 })
@@ -218,7 +218,7 @@ async function searchMovies(){
                        
                     </div>
                 `
-                document.body.appendChild(searchPopContainer);
+                document.body.append(searchPopContainer);
                 document.getElementById("close-btn").addEventListener('click', function(){
                     document.getElementById("modal").style.visibility = "hidden";
                 })
@@ -251,7 +251,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
         </div>
         `,
         );
-        
+    
         searchDiv.innerHTML += searchloadContainer;
         document.getElementById("search-show-more").append(searchDiv);
         
@@ -279,7 +279,7 @@ document.getElementById("search-load-more").addEventListener("click", function(e
                        
                     </div>
                 `
-                document.body.appendChild(searchLoadPopContainer);
+                document.body.append(searchLoadPopContainer);
                 document.getElementById("close-btn").addEventListener('click', function(){
                     document.getElementById("modal").style.visibility = "hidden";
                 })
@@ -313,11 +313,11 @@ document.getElementById("clearBtn").addEventListener("click", function(){
     
     
 })
+
+
 // Display Now Playing Movies function
 
 window.onload = function() {
    nowPlayingMovies();
-   change();
-
 };
 

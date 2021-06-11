@@ -1,6 +1,6 @@
 ## Week 1 Assignment: Flixster
 
-Submitted by: **NAME**
+Submitted by: **Stella Kim**
 
 Estimated time spent: **#** hours spent in total
 
@@ -13,15 +13,15 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 - [x] User can view a list of current movies from The Movie Database API as a grid view.
 - [x] For each movie displayed, user can see the following details: `Title`, `Poster Image`, `Votes`.
 - [x] User can load more current movies by clicking a button at the bottom of the list. The page should not refresh; movies should simply be added to the bottom.
-- [ ] Allow users to search for movies and display them in a grid view. Users should be able to clear results and view previous current movies displayed.
+- [x] Allow users to search for movies and display them in a grid view. Users should be able to clear results and view previous current movies displayed.
 - [x] Website accounts for basic HTML/CSS accessibility features.
-- [ ] Website should be responsive.
+- [x] Website should be responsive.
 
 #### STRETCH FEATURES
 
 - [ ] Deploy website using GitHub Pages. 
-- [ ] Allow user to view more details about a movie within a popup.
-- [ ] Improve the user experience through CSS & animation.
+- [x] Allow user to view more details about a movie within a popup.
+- [x] Improve the user experience through CSS & animation. 
 - [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
 - [ ] Implement anything else that you can get done to improve the app functionality!
 

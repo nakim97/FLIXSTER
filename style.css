@@ -74,7 +74,6 @@ i {
   margin-bottom: 50px;
 }
 
-
 /* Styling load more buttons and respective containers for more Now Playing & Searched movies */
 
 #now-load-more,
@@ -96,6 +95,9 @@ i {
   display: none;
 }
 
+#container-title {
+  margin-top: 10px;
+}
 /* Responsiveness and adding media queries*/
 @media (max-width: 780px) {
   header h1 {
@@ -125,30 +127,49 @@ i {
 }
 
 /* styling the pop up */
-#modal{
-  position:fixed;
-  top:50%;
-  left:50%;
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  border-radius: 10px;
-  z-index: 10;
+  border-radius: 20px;
+  z-index: 100;
   background-color: black;
-  color:white;
+  color: white;
   width: 400px;
-  height: 400px;
-  
-  
+  height: 500px;
 }
 
-#close-btn{
-    position:absolute;
-     top:0;
-     right:0;
-     outline:none;
-     border:none;
-     cursor:pointer;
+#modal h1 {
+  font-family: "Special Elite", cursive;
+  margin-top: 20px;
 }
-#pop-img{
+#modal p {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+#close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+#pop-img {
   justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style movie posters */
+#img {
+  justify-content: center;
+  margin-top: 20px;
+  transition: all 1.5s ease;
+}
+#img:hover {
+  transform: scaleY(1.02);
 }
