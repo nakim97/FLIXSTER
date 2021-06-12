@@ -6,6 +6,7 @@ Estimated time spent: **15** hours spent in total
 
 Deployed Application: [Flixster Deployed Site](https://stellakim-flixter.netlify.app/)
 
+
 ### Application Features
 
 #### REQUIRED FEATURES
@@ -19,7 +20,7 @@ Deployed Application: [Flixster Deployed Site](https://stellakim-flixter.netlify
 
 #### STRETCH FEATURES
 
-- [x] Deploy website using GitHub Pages. (Netlify) 
+- [x] Deploy website using Netlify (https://stellakim-flixter.netlify.app/)
 - [x] Allow user to view more details about a movie within a popup.
 - [x] Improve the user experience through CSS & animation. 
 - [x] Implemented a slider carousel to display now playing movies (movie posters).
@@ -76,7 +77,7 @@ Yes, I found the topics discussed in the labs extremely helpful in preparing me 
   
 If I had more time to complete the assignment, I would have written cleaner code and more readable variable/const names. I was a bit rusty on for loops and iterating in javascript, so my code came out a lot more dense than I thought when it could have been done more efficiently and cleaner. Since my code was dense and kept getting longer, I found myself adding various variable names that sounded similar to eachother.
 
-If I could add more features, I would have embedded movie trailers and changed the styling of the modal box. A more ambitious project that I'd like to keep building on is a mock website of Netflix, but instead with movie info. So I'd like to add more css animation effects, responsive features, and modern styling.
+If I could add more features, I would have embedded movie trailers and changed the styling of the modal box. A more ambitious project that I'd like to keep building on is a mock website of Netflix, but instead with movie info. So I'd like to add more css animation effects, responsive features, and modern styling. I also ran into an issue with browser compatibility where my website displayed as planned on all browsers minus safari, so I would like to fix that component as well as adding more accessiblity features.
 
 My modal box event listener function ran into some bugs, so I would also like to write the function out more efficiently rather than having a jumble of variables/functions within functions!
 
