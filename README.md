@@ -4,7 +4,7 @@ Submitted by: **Stella Kim**
 
 Estimated time spent: **15** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](https://stellakim-flixter.netlify.app/)
+Deployed Application: [Flixster Deployed Site](https://stellakim-flixter.netlify.app/)
 
 ### Application Features
 
@@ -82,7 +82,7 @@ My modal box event listener function ran into some bugs, so I would also like to
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Overall the project went well! I came in with a good understanding of HTML/CSS/JavaScript, and felt like the project was a good challenge. As I did not have experience with implementing a modal box feature, I struggled a lot on that component. I ran into a few bugs where the modal box would not close on the second click and the console logged back an "undefined" error multiple times.
+Overall the project went well! I came in with a good understanding of HTML/CSS/JavaScript, and felt like the project was a good challenge. I found the setting up the website with html/css/javascript was a smooth process up until putting functionality behind the elements. As I did not have experience with implementing a modal box feature, I struggled a lot on that component. I ran into a few bugs where the modal box would not close on the second click and the console logged back an "undefined" error multiple times. I also did not have much experience with APIs, so I also ran into a few errors during the process.
 
 I noticed some of my peers implementing cool features like a scroll to top button and embedding movie trailers, so that is definitely something I'd like to try out next time! 
 
@@ -91,7 +91,5 @@ I noticed some of my peers implementing cool features like a scroll to top butto
 - https://kenwheeler.github.io/slick/
 
 ### Shout out
-
-- Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
 Shout out to Matt and the TA's who dropped in to help! Also shout out to my groupmates for answering any questions I had :)
